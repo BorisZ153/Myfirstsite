@@ -4,11 +4,11 @@
     min-height: 100vh;
     font-family: 'Roboto', sans-serif;
     margin: 0;
+    min-width: 400px;
 }
 
 /* Header styles*/
 .header {
-    position: relative;
     box-sizing: border-box;
     width: 100%;
     max-width: 1300px;
@@ -20,6 +20,7 @@
     justify-content: space-between;
     align-items:center;
     background-color: #213B7E;
+    z-index: 1;
     }
 
 .site-logo {
@@ -76,8 +77,8 @@ min-height: 80px;
 /*Login popup*/
 .login-popup {
     display: none;
-    position: absolute;
-    z-index: 2;
+    position: fixed;
+    z-index: 1;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 100%);
@@ -132,6 +133,7 @@ min-height: 80px;
    margin: 0 auto;
    padding: 0 2vw;
    flex-grow: 1;
+   margin-top: 100px;
 }
 
 .class-photo {
@@ -157,14 +159,59 @@ h2 {
     line-height: 1.17;
 }
 
+.intro-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .intro-text {
-width: 100%;
-max-width: 634px;
-font-family: 'Roboto', sans-serif;
+    margin: 0;
+    width: 100%;
+    max-width: 634px;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.17;
+}
+
+.intro-aside {
+    position: relative;
+    color: rgba(100, 100, 100, 1);
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 36px;
+    line-height: 1.17;
+    margin-left: 1em;
+}
+
+.teach-together::before {
+content: '\201C';
+/*position: absolute;*/
+font-family: 'Lobster';
 font-style: normal;
 font-weight: 400;
-font-size: 18px;
+font-size: 64px;
 line-height: 1.17;
+color: #646464;
+top: -10px;
+left: -30px;
+}
+
+.teach-together::after {
+    content: '\201D';
+    position: absolute;
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 64px;
+    line-height: 1.17;
+    color: #646464;
+    }
+
+.intro-aside > blockquote {
+    margin: 0;
 }
 
 .intro-text > strong {
@@ -177,8 +224,24 @@ font-style: italic;
 }
 
 /*Students */
+.student-header {
+    margin-bottom: 37px;
+}
+
 .main-students {
     max-width: 1202px;
+}
+
+.student-heading {
+    max-width: 1202px;
+    padding: 0 13px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    margin-bottom: 24px;
+}
+
+.student-heading::after {
+content: '👧👦';
 }
 
 .students {
@@ -186,9 +249,13 @@ font-style: italic;
     flex-wrap: wrap;
     max-width: 1202px;
     gap: 50px;
+    padding: 0 13px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .student {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -201,8 +268,26 @@ font-style: italic;
 
 @media (min-width: 1150px) {
     .student {
-        max-width: calc(100% / 2);
+        max-width: calc(100% / 4); 
     }
+}
+
+.student-new {
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+    right: -13px;
+    display: flex;
+    padding: 2px 5px;
+    border-radius: 20px;
+    background-color: #3AA828;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.17;
 }
 
 .student >img {
@@ -258,8 +343,16 @@ font-style: italic;
 }
 
 .contacts-maps {
+    box-sizing: border-box;
     width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
     margin-bottom: 15px;
+    padding: 0 16px;
+}
+
+.yandex-map {
+width: 100%;
 }
 
 .contacts-adress,
